@@ -1,18 +1,23 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+// In App.js in a new project
 
-export default function App() {
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <SafeAreaView>
-
-    <View>
-
-<Image  
-  source={{uri: './assets/img/imgindexHL.avif'}}
-  className="h-7 w-7 bg-gray-300 rounded-full"
-  />
-  </View>
-
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
+
+   
 }
 
+export default App;
